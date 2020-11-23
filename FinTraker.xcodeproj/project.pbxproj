@@ -10,10 +10,12 @@
 		D8C55F0E2569350E00DA7AB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F0D2569350E00DA7AB2 /* AppDelegate.swift */; };
 		D8C55F102569350E00DA7AB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F0F2569350E00DA7AB2 /* SceneDelegate.swift */; };
 		D8C55F132569350E00DA7AB2 /* FinTraker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F112569350E00DA7AB2 /* FinTraker.xcdatamodeld */; };
-		D8C55F152569350E00DA7AB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F142569350E00DA7AB2 /* ContentView.swift */; };
+		D8C55F152569350E00DA7AB2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F142569350E00DA7AB2 /* HomeView.swift */; };
 		D8C55F172569351100DA7AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C55F162569351100DA7AB2 /* Assets.xcassets */; };
 		D8C55F1A2569351100DA7AB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C55F192569351100DA7AB2 /* Preview Assets.xcassets */; };
 		D8C55F1D2569351100DA7AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C55F1B2569351100DA7AB2 /* LaunchScreen.storyboard */; };
+		D8C55F25256AAA2300DA7AB2 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F24256AAA2300DA7AB2 /* AppView.swift */; };
+		D8C55F27256AB33100DA7AB2 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F26256AB33100DA7AB2 /* ChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +23,13 @@
 		D8C55F0D2569350E00DA7AB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C55F0F2569350E00DA7AB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8C55F122569350E00DA7AB2 /* FinTraker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinTraker.xcdatamodel; sourceTree = "<group>"; };
-		D8C55F142569350E00DA7AB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8C55F142569350E00DA7AB2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D8C55F162569351100DA7AB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8C55F192569351100DA7AB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8C55F1C2569351100DA7AB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8C55F1E2569351100DA7AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8C55F24256AAA2300DA7AB2 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		D8C55F26256AB33100DA7AB2 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 			children = (
 				D8C55F0D2569350E00DA7AB2 /* AppDelegate.swift */,
 				D8C55F0F2569350E00DA7AB2 /* SceneDelegate.swift */,
-				D8C55F142569350E00DA7AB2 /* ContentView.swift */,
+				D8C55F142569350E00DA7AB2 /* HomeView.swift */,
+				D8C55F24256AAA2300DA7AB2 /* AppView.swift */,
+				D8C55F26256AB33100DA7AB2 /* ChartView.swift */,
 				D8C55F162569351100DA7AB2 /* Assets.xcassets */,
 				D8C55F1B2569351100DA7AB2 /* LaunchScreen.storyboard */,
 				D8C55F1E2569351100DA7AB2 /* Info.plist */,
@@ -151,8 +157,10 @@
 			files = (
 				D8C55F132569350E00DA7AB2 /* FinTraker.xcdatamodeld in Sources */,
 				D8C55F0E2569350E00DA7AB2 /* AppDelegate.swift in Sources */,
-				D8C55F152569350E00DA7AB2 /* ContentView.swift in Sources */,
+				D8C55F152569350E00DA7AB2 /* HomeView.swift in Sources */,
+				D8C55F25256AAA2300DA7AB2 /* AppView.swift in Sources */,
 				D8C55F102569350E00DA7AB2 /* SceneDelegate.swift in Sources */,
+				D8C55F27256AB33100DA7AB2 /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
