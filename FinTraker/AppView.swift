@@ -14,14 +14,15 @@ struct AppView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Menu")
+                 Image(systemName: "house.fill")
+                 Text("Menu")
+                    .transition(.slide)
             }
-            ChartView()
+            CompletedListView()
                 .tabItem {
-                    Image(systemName: "chart.pie.fill")
-                    Text("Charts")
-            }
+                Image(systemName: "text.badge.checkmark")
+                Text("Completed")
+                }
         }
     }
 }

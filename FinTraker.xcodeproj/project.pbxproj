@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83CEBE62572888200DB81EC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83CEBE52572888200DB81EC /* Item.swift */; };
+		D859B1B3258148AE0044BCDD /* CompletedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B1B2258148AE0044BCDD /* CompletedListView.swift */; };
+		D859B1BB2584EE950044BCDD /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B1BA2584EE950044BCDD /* Dates.swift */; };
+		D859B1C925895DB80044BCDD /* EditPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859B1C825895DB80044BCDD /* EditPopUp.swift */; };
 		D8C55F0E2569350E00DA7AB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F0D2569350E00DA7AB2 /* AppDelegate.swift */; };
 		D8C55F102569350E00DA7AB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F0F2569350E00DA7AB2 /* SceneDelegate.swift */; };
 		D8C55F132569350E00DA7AB2 /* FinTraker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F112569350E00DA7AB2 /* FinTraker.xcdatamodeld */; };
@@ -15,10 +19,14 @@
 		D8C55F1A2569351100DA7AB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C55F192569351100DA7AB2 /* Preview Assets.xcassets */; };
 		D8C55F1D2569351100DA7AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C55F1B2569351100DA7AB2 /* LaunchScreen.storyboard */; };
 		D8C55F25256AAA2300DA7AB2 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F24256AAA2300DA7AB2 /* AppView.swift */; };
-		D8C55F27256AB33100DA7AB2 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F26256AB33100DA7AB2 /* ChartView.swift */; };
+		D8C55F29256D8D7100DA7AB2 /* AddPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C55F28256D8D7000DA7AB2 /* AddPopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D83CEBE52572888200DB81EC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D859B1B2258148AE0044BCDD /* CompletedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedListView.swift; sourceTree = "<group>"; };
+		D859B1BA2584EE950044BCDD /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		D859B1C825895DB80044BCDD /* EditPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopUp.swift; sourceTree = "<group>"; };
 		D8C55F0A2569350E00DA7AB2 /* FinTraker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTraker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C55F0D2569350E00DA7AB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C55F0F2569350E00DA7AB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +37,7 @@
 		D8C55F1C2569351100DA7AB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8C55F1E2569351100DA7AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8C55F24256AAA2300DA7AB2 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		D8C55F26256AB33100DA7AB2 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		D8C55F28256D8D7000DA7AB2 /* AddPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D859B1CB25895EF10044BCDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8C55F142569350E00DA7AB2 /* HomeView.swift */,
+				D8C55F28256D8D7000DA7AB2 /* AddPopUp.swift */,
+				D859B1C825895DB80044BCDD /* EditPopUp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D8C55F012569350E00DA7AB2 = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +82,11 @@
 			children = (
 				D8C55F0D2569350E00DA7AB2 /* AppDelegate.swift */,
 				D8C55F0F2569350E00DA7AB2 /* SceneDelegate.swift */,
-				D8C55F142569350E00DA7AB2 /* HomeView.swift */,
+				D859B1CB25895EF10044BCDD /* Views */,
+				D859B1BA2584EE950044BCDD /* Dates.swift */,
+				D83CEBE52572888200DB81EC /* Item.swift */,
 				D8C55F24256AAA2300DA7AB2 /* AppView.swift */,
-				D8C55F26256AB33100DA7AB2 /* ChartView.swift */,
+				D859B1B2258148AE0044BCDD /* CompletedListView.swift */,
 				D8C55F162569351100DA7AB2 /* Assets.xcassets */,
 				D8C55F1B2569351100DA7AB2 /* LaunchScreen.storyboard */,
 				D8C55F1E2569351100DA7AB2 /* Info.plist */,
@@ -156,11 +176,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C55F132569350E00DA7AB2 /* FinTraker.xcdatamodeld in Sources */,
+				D83CEBE62572888200DB81EC /* Item.swift in Sources */,
 				D8C55F0E2569350E00DA7AB2 /* AppDelegate.swift in Sources */,
+				D859B1C925895DB80044BCDD /* EditPopUp.swift in Sources */,
 				D8C55F152569350E00DA7AB2 /* HomeView.swift in Sources */,
+				D859B1BB2584EE950044BCDD /* Dates.swift in Sources */,
 				D8C55F25256AAA2300DA7AB2 /* AppView.swift in Sources */,
 				D8C55F102569350E00DA7AB2 /* SceneDelegate.swift in Sources */,
-				D8C55F27256AB33100DA7AB2 /* ChartView.swift in Sources */,
+				D859B1B3258148AE0044BCDD /* CompletedListView.swift in Sources */,
+				D8C55F29256D8D7100DA7AB2 /* AddPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +322,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FinTraker/Preview Content\"";
+				DEVELOPMENT_TEAM = 24YMX7WMLR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FinTraker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,8 +343,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FinTraker/Preview Content\"";
+				DEVELOPMENT_TEAM = 24YMX7WMLR;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FinTraker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
