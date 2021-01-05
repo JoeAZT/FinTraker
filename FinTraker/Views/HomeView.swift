@@ -29,6 +29,7 @@ struct HomeView: View {
     @State private var showCircle = false
     @StateObject var viewModel = HomeViewModel()
     let dates = Dates.generateDays()
+    @Environment(\.colorScheme) var colorScheme
     
     var numberOfItems: Int {
         return itemStore.items.count
@@ -51,12 +52,12 @@ struct HomeView: View {
             
             //Title
         VStack {
-                Text("ChekList").foregroundColor(.white)
+                Text("ChekList").foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                     .font(.system(size: 40))
                     .fontWeight(.heavy)
                     .padding(.top, 400)
                     .padding(.trailing, 180)
-                Text("Your week").foregroundColor(.white)
+                Text("Your week").foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                     .font(.system(size: 24))
                     .fontWeight(.medium)
                     .padding(.trailing, 230)
@@ -67,12 +68,12 @@ struct HomeView: View {
                 HStack(spacing: 10) {
                     ForEach(dates, id: \.timeIntervalSince1970) { date in
                         Text("\(viewModel.formatter.string(from: date))")
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                             .font(.system(size: 28))
                             .fontWeight(.bold)
                             .padding(.leading, 5)
                             .frame(width: 70, height: 70)
-                            .background(Color.white.opacity(0.3))
+                            .background(Color.white.opacity(0.2))
                             .cornerRadius(10)
                             .shadow(color: Color.white.opacity(0.1), radius: 3, x: 2, y: 2)
                     }
@@ -86,7 +87,7 @@ struct HomeView: View {
                     VStack {
                         HStack {
                             VStack {
-                                Text("Tasks completed:").foregroundColor(.white)
+                                Text("Tasks completed:").foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                                     .font(.system(size: 20))
                                     .fontWeight(.heavy)
                                     .padding(.top, 10)
@@ -96,7 +97,7 @@ struct HomeView: View {
                                 Text("\(numberOfItemsCompleted)/\(numberOfItems)")
                                     .font(.system(size: 60))
                                     .fontWeight(.bold)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                                     .font(.title)
                                     .padding(.trailing, 20)
                             }
@@ -110,7 +111,7 @@ struct HomeView: View {
                                             .trim(from: showCircle ? CGFloat(1 - (Double(percentage)/100)) : 1, to: 1)
                                             .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
                                             .frame(width: 100, height: 100)
-                                            .foregroundColor(Color.white)
+                                            .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                                             .rotationEffect(.degrees(90))
                                             .rotation3DEffect(.degrees(180), axis: (x: 1, y: 0, z: 0))
                                             .animation(Animation.easeInOut(duration: 2))
@@ -120,12 +121,12 @@ struct HomeView: View {
                                         Circle()
                                             .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
                                             .frame(width: 100, height: 100)
-                                            .foregroundColor(Color.white)
+                                            .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                                             .opacity(0.3)
                                         Text("\(percentage)%")
                                             .font(.system(size: 24))
                                             .fontWeight(.bold)
-                                            .foregroundColor(.white)
+                                            .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
                                         
                                     }
                                 }
@@ -136,16 +137,16 @@ struct HomeView: View {
                         //White box on view
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white)
+                                .fill(colorScheme == .dark ? Color.black : Color.white)
                                 .frame(width: 300, height: 500, alignment: .center)
                                 .opacity(1)
                                 .padding(.bottom, 240)
                             
                             RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.white)
+                                .fill(colorScheme == .dark ? Color.black : Color.white)
                                 .frame(width: 500, height: 500, alignment: .center)
                                 .opacity(1)
-                                .padding(.bottom, 200)
+                                .padding(.bottom, 180)
                             
                             //Add item button
                             VStack {
@@ -156,13 +157,13 @@ struct HomeView: View {
                                         print(1 - (Double(percentage)/100))
                                     }) {
                                         Text("+")
-                                            .font(.system(size: 40))
+                                            .font(.system(size: 50))
                                             .fontWeight(.bold)
                                             .padding(.bottom, 5)
-                                            .frame(width: 286, height: 40, alignment: .center)
+                                            .frame(width: 288, height: 60, alignment: .center)
                                             .foregroundColor(.white)
                                             .background(LinearGradient(gradient: Gradient(colors: [.blue, .purple, .pink]), startPoint: .leading, endPoint: .trailing))
-                                            .cornerRadius(5)
+                                            .cornerRadius(6)
                                             .shadow(color: Color.black.opacity(0.5), radius: 3, x: 2, y: 2)
                                             .padding(.top, 5)
                                     }.sheet(isPresented: $showingAddPopUp) {
@@ -191,7 +192,7 @@ struct HomeView: View {
                                                         
                                                             Button(action: {
                                                                 self.showingEditPopUp = true
-                                                                print("edit was pressed")
+                                                                print("\(item.itemName)")
                                                             }) {
                                                                 Image(systemName: "pencil")
                                                                     .font(.system(size: 15, weight: .heavy))
@@ -202,7 +203,7 @@ struct HomeView: View {
                                                                 .shadow(color: Color.black.opacity(0.3), radius: 3, x: 2, y: 2)
                                                             }
                                                                     .sheet(isPresented: $showingEditPopUp) {
-                                                                        EditPopUp(showingEditPopUp: $showingEditPopUp, itemStore: itemStore)
+                                                                        EditPopUp(showingEditPopUp: $showingEditPopUp, itemStore: itemStore, originalItem: item)
                                                             }
                                                         }
                                                     }

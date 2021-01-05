@@ -9,18 +9,19 @@
 import SwiftUI
 
 struct EditPopUp: View {
-
+    
     @Binding var showingEditPopUp: Bool
     @State private var newInfoText = ""
     @ObservedObject var itemStore: ItemStore
     @State private var score: Item.Score = .medium
+    let originalItem: Item
 
     var body: some View {
 
         ZStack {
             RoundedRectangle(cornerRadius: 5)
             .foregroundColor(Color(#colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)))
-            .frame(width: 400, height: 900)
+            .frame(width: 500, height: 900)
             .shadow(color: .blue, radius: 2, x: 0, y: 2)
 
             ZStack {
@@ -30,25 +31,25 @@ struct EditPopUp: View {
                         RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(Color(#colorLiteral(red: 0.8745098039, green: 0.8823529412, blue: 0.8862745098, alpha: 1)))
                         .frame(width: 286, height: 500)
-                            .padding(.top, 310)
+                            .padding(.top, 410)
                             .shadow(color: Color.black.opacity(0.3), radius: 3, x: 1, y: -2)
                         }
                         RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(Color(#colorLiteral(red: 0.8745098039, green: 0.8823529412, blue: 0.8862745098, alpha: 1)))
-                        .frame(width: 400, height: 300)
-                            .padding(.top, 200)
+                        .frame(width: 500, height: 300)
+                            .padding(.top, 300)
                     }
                     
                     RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color(#colorLiteral(red: 0.7450980392, green: 0.7647058824, blue: 0.7764705882, alpha: 1)))
                     .frame(width: 286, height: 306)
-                        .padding(.top, 640)
+                        .padding(.top, 740)
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 1, y: -2)
                 }
                 RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(Color(#colorLiteral(red: 0.7450980392, green: 0.7647058824, blue: 0.7764705882, alpha: 1)))
-                .frame(width: 400, height: 220)
-                    .padding(.top, 640)
+                .frame(width: 500, height: 220)
+                    .padding(.top, 740)
                 
                 VStack {
         
@@ -63,14 +64,16 @@ struct EditPopUp: View {
                             .cornerRadius(20)
                             .shadow(color: Color.black.opacity(0.3), radius: 3, x: 2, y: 2)
                     }
-                    .padding(.leading, 300)
-                    //.padding(.top, 100)
+                    .padding(.leading, 350)
+                    .padding(.bottom, 30)
+                    .padding(.top, 5)
                     
                     //Title
                     Text("Task Overview")
                         .foregroundColor(.purple)
-                        .font(.title)
+                        .font(.system(size: 38, weight: .bold))
                         .fontWeight(.bold)
+                        .padding(.bottom, 30)
 
                     //Text field for user to input a new item
                     ZStack(alignment: .topLeading) {
@@ -79,14 +82,16 @@ struct EditPopUp: View {
                             Text("Type something here")
                                 .padding(.all, 7)
                         }
-                        TextEditor(text: $newInfoText)
-                            .opacity(newInfoText.isEmpty ? 0.2 : 1)
+                        TextViewWrapper(text: $newInfoText)
+                        
+//                        TextEditor(text: $newInfoText)
+//                            .opacity(newInfoText.isEmpty ? 0.2 : 1)
                     }
-                    .frame(width: 260, height: 130, alignment: .top)
+                    .frame(width: 286, height: 140, alignment: .top)
                     .background(Color(#colorLiteral(red: 0.9999126792, green: 1, blue: 0.9998814464, alpha: 1)))
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 3, x: 1, y: 2)
-                .padding(.bottom, 30)
+                .padding(.bottom, 50)
 
                     Text("Change priority?")
                         .foregroundColor(.purple)
@@ -142,7 +147,7 @@ struct EditPopUp: View {
                             .opacity(score == .high ? 1 : 0.5)
                         }
                     }
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 15)
 
                         HStack {
                                 // Delete task should dismiss view and also delete the task from the array
@@ -173,7 +178,7 @@ struct EditPopUp: View {
                                 }
                                 .padding(.horizontal, 4)
                             }
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 35)
                                
                             VStack {
                             //Complete button should dismiss the view and delete the task from the array and add it to the completed items array
@@ -202,8 +207,8 @@ struct EditPopUp: View {
                                         .shadow(color: Color.black.opacity(0.5), radius: 3, x: 2, y: 2)
                                 }
                             }
+                    }
                 }
-            }
             }
         }
     }

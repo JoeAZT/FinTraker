@@ -21,7 +21,7 @@ struct AddPopUp: View {
             
             RoundedRectangle(cornerRadius: 5)
             .foregroundColor(Color(#colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)))
-            .frame(width: 400, height: 900)
+            .frame(width: 500, height: 900)
             .shadow(color: .blue, radius: 2, x: 0, y: 2)
             
             ZStack {
@@ -31,25 +31,25 @@ struct AddPopUp: View {
                         RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(Color(#colorLiteral(red: 0.8745098039, green: 0.8823529412, blue: 0.8862745098, alpha: 1)))
                         .frame(width: 286, height: 500)
-                            .padding(.top, 690)
+                            .padding(.top, 760)
                             .shadow(color: Color.black.opacity(0.3), radius: 3, x: 1, y: -2)
                         }
                         RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(Color(#colorLiteral(red: 0.8745098039, green: 0.8823529412, blue: 0.8862745098, alpha: 1)))
-                        .frame(width: 400, height: 300)
-                            .padding(.top, 600)
+                        .frame(width: 500, height: 300)
+                            .padding(.top, 670)
                     }
                     
                     RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color(#colorLiteral(red: 0.7450980392, green: 0.7647058824, blue: 0.7764705882, alpha: 1)))
                     .frame(width: 286, height: 306)
-                        .padding(.top, 845)
+                        .padding(.top, 915)
                         .shadow(color: Color.black.opacity(0.3), radius: 3, x: 1, y: -2)
                 }
                 RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(Color(#colorLiteral(red: 0.7450980392, green: 0.7647058824, blue: 0.7764705882, alpha: 1)))
-                .frame(width: 400, height: 220)
-                    .padding(.top, 850)
+                .frame(width: 500, height: 220)
+                    .padding(.top, 920)
                 
                 VStack {
                     
@@ -64,15 +64,16 @@ struct AddPopUp: View {
                             .cornerRadius(20)
                             .shadow(color: Color.black.opacity(0.3), radius: 3, x: 2, y: 2)
                     }
-                    .padding(.leading, 300)
-                    .padding(.top, 135)
-                    .padding(.bottom, 35)
+                    .padding(.leading, 350)
+                    .padding(.top, 100)
+                    .padding(.bottom, 45)
                     
                     //Title
                     Text("Add New Item")
                         .foregroundColor(.purple)
-                        .font(.title)
+                        .font(.system(size: 40, weight: .bold))
                         .fontWeight(.bold)
+                        .padding(.bottom, 20)
                     
                     //Text field for user to input a new item
                     ZStack(alignment: .topLeading) {
@@ -82,16 +83,19 @@ struct AddPopUp: View {
                                 .padding(.all, 7)
                         }
                         
+                        TextViewWrapper(text: $newInfoText)
                         
-                        TextEditor(text: $newInfoText)
-                            .opacity(newInfoText.isEmpty ? 0.2 : 1)
-                                
+                        
+//                        TextEditor(text: $newInfoText)
+//                            .opacity(newInfoText.isEmpty ? 0.2 : 1)
+
                     }
-                    .frame(width: 260, height: 260, alignment: .top)
+                    .frame(width: 286, height: 320, alignment: .top)
                     .background(Color(#colorLiteral(red: 0.9999126792, green: 1, blue: 0.9998814464, alpha: 1)))
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 3, x: 1, y: 2)
-                .padding(.bottom, 50)
+                .padding(.bottom, 40)
+                    
                     
                     Text("Priority?")
                         .foregroundColor(.purple)
@@ -168,12 +172,11 @@ struct AddPopUp: View {
                         
                         //The done button should add the new item to an array of items that will be displayed on the home page
                         Button(action: {
-                            //what is does
                             self.showingAddPopUp = false
                             print(newInfoText)
                             print(score)
                             
-                            let item = Item(itemName: newInfoText, itemScore: score)
+                            let item = Item(itemName: newInfoText, itemScore: score, id: UUID().uuidString)
                             itemStore.addItem(item)
                             
                         }) {
@@ -188,7 +191,7 @@ struct AddPopUp: View {
                         .padding(.horizontal, 4)
                     }
                 }
-                .padding(.bottom, 120)
+                .padding(.bottom, 100)
             }
         }
     }

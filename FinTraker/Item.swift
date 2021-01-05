@@ -18,8 +18,7 @@ struct Item: Identifiable {
     }
     let itemName: String
     let itemScore: Score
-    let id = UUID()
-    //var completed: Bool
+    let id: String
 }
 
 class ItemStore: ObservableObject {

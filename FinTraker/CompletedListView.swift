@@ -13,7 +13,7 @@ struct CompletedListView: View {
         List {
             ForEach(0..<5) { index in
                 HStack {
-                    Text("Yeet")
+                    Text("Item")
                     
                     Spacer()
                     Button("Button") {
