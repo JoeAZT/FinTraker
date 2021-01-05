@@ -84,10 +84,6 @@ struct AddPopUp: View {
                         }
                         
                         TextViewWrapper(text: $newInfoText)
-                        
-                        
-//                        TextEditor(text: $newInfoText)
-//                            .opacity(newInfoText.isEmpty ? 0.2 : 1)
 
                     }
                     .frame(width: 286, height: 320, alignment: .top)
